@@ -4,7 +4,7 @@ import plotly.express as px
 import json
 from shapely.geometry import shape
 
-st.set_page_config(layout="wide")
+
 
 
 st.write("### Average Chronic Kidney Disease % Prevalence (2023–2024)")
