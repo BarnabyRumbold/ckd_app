@@ -13,7 +13,7 @@ import numpy as np
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 
-
+st.set_page_config(layout="wide")
 
 # st.sidebar.markdown("""
 #     <div style="text-align: center;">
