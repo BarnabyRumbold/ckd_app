@@ -14,8 +14,6 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 
 
-# Set up page layout with Mammal Society logo in the sidebar
-st.set_page_config(layout="wide")
 
 # st.sidebar.markdown("""
 #     <div style="text-align: center;">
