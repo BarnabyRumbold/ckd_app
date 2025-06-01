@@ -12,7 +12,7 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import pydeck as pdk
 
-
+st.set_page_config(layout="wide")
 # Page title and explanation
 st.write("### Average Chronic Kidney Disease Prevalence % Over Time")
 st.markdown("*This graph shows a record of chronic kidney disease prevalence over time for selected Sub ICB locations. It allows visual comparison across geographies and years.*")
