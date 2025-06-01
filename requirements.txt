@@ -10,3 +10,4 @@ Pillow
 pydeck
 plotly
 shapely
+openpyxl
