@@ -10,7 +10,7 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 from datetime import datetime, timedelta
 
-
+st.set_page_config(layout="wide")
 st.write("### Insights & Recommendations")
 st.markdown("*This page provides an overview of statistics related to Chronic Kidney Disease.*")
 st.markdown("*Summary statistics are provided alongside geographical locations showing top locations for Chronic Kidney Disease in the UK. Finally some data quality observations are made for clarity as well as potential recommendations for future work.*")
