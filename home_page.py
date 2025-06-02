@@ -13,13 +13,8 @@ import numpy as np
 from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 
+# Set up paage
 st.set_page_config(layout="wide")
-
-# st.sidebar.markdown("""
-#     <div style="text-align: center;">
-#         <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.forbes.com%2Fsites%2Fhelenleebouygues%2F2019%2F11%2F12%2Fputting-the-science-back-into-science-labs%2F&psig=AOvVaw0gtyu2hNSs0vVwfU-EDGw1&ust=1748704853374000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKC-uq-_y40DFQAAAAAdAAAAABAE" alt="Logo" width="100"/>
-#     </div>
-# """, unsafe_allow_html=True)
 
 
 # Title and further information
@@ -34,7 +29,7 @@ col1, col2 = st.columns(2)
 # Add content
 with col1:
 
-    # Add otter image
+    # Add image
     image_url = "https://specials-images.forbesimg.com/imageserve/1012405368/960x0.jpg"  # Replace with your actual otter image URL
     # Make a request to get the image
     response = requests.get(image_url)
