@@ -17,20 +17,8 @@ st.markdown("*Summary statistics are provided alongside geographical locations s
 
 # get session state data
 df = st.session_state.data
-
-
-
-# Set up some columns and create some summary statistics
-# col1, col2, col3, col4 = st.columns(4)
-# col1.markdown(f"*Total Sightings:*  {total_sightings:,}")
-# col2.markdown(f"*Unique Observation Days:* {unique_days}")
-# col3.markdown(f"*Avg Sightings Per Observation Day:* {sightings_per_day:.2f}")
-# col4.markdown(f"*Avg Sighting Per Total Days:* {sightings_per_total_days:.2f}")
-
-
-
 col1, col2 = st.columns(2)
-textColor = "#333333"  # From your TOML
+textColor = "#333333"  
 
 
 # Please create a top 5 places by prevlance % of ckd
@@ -70,7 +58,7 @@ with col1:
 with col2:
     st.write("**Contact and Project Information**")
     st.markdown("*For all contact enquiries please email: barnabyrumbold@hotmail.com*")
-    st.markdown("*Collaboration is more than welcome, please find the GitHub repository [here](https://github.com/BarnabyRumbold/otter_API_dashboard)*")
+    st.markdown("*Collaboration is more than welcome, please find the GitHub repository [here](https://github.com/BarnabyRumbold/ckd_app)*")
 
 
 # Note to provide information about where the data is coming from
