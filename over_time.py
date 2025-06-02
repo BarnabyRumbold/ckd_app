@@ -12,7 +12,9 @@ from geopy.geocoders import Nominatim
 from geopy.extra.rate_limiter import RateLimiter
 import pydeck as pdk
 
+# Set page layout
 st.set_page_config(layout="wide")
+
 # Page title and explanation
 st.write("### Average Chronic Kidney Disease Prevalence % Over Time")
 st.markdown("*This graph shows a record of chronic kidney disease prevalence over time for selected Sub ICB locations. It allows visual comparison across geographies and years.*")
@@ -33,7 +35,7 @@ locations = sorted(df['Location'].unique())
 selected_locations = st.multiselect(
     "Select Sub ICB Location(s):",
     options=locations,
-    default=[],  # Show first 3 by default or leave as [] for blank
+    default=[],  
     placeholder="Choose location(s)..."
 )
 
@@ -73,6 +75,5 @@ if selected_locations:
 else:
     st.info("Please select at least one location to view data.")
 
-# Note to provide information about where the data is coming from
 # Note to provide information about where the data is coming from
 st.markdown("*This app uses data from the NHS Quality and Outcomes Framework*")
