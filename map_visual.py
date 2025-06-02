@@ -1,16 +1,20 @@
+# Import packages
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
 import json
 from shapely.geometry import shape
 
+# Set page layout
 st.set_page_config(layout="wide")
-
 st.write("### Average Chronic Kidney Disease % Prevalence (2023–2024)")
 st.markdown(
     "*This visual shows CKD prevalence geographically for 2023–24. This helps highlight areas with higher or lower average rates of CKD based on NHS data.*"
 )
 st.markdown("*Please allow a few moments for this page to run.*")
+
+# Get data
 if 'data' not in st.session_state or 'geojson' not in st.session_state:
     st.error("Data or GeoJSON not loaded.")
     st.stop()
@@ -20,12 +24,12 @@ if 'data' not in st.session_state or 'geojson' not in st.session_state:
 @st.cache_data
 def filter_group_data(data):
     df_2324 = data[data['Year'] == '2023-24'].copy()
-    # Strip & uppercase codes & names to ensure consistency
+# Strip & uppercase codes & names to ensure consistency
     df_2324['Sub ICB Loc ONS code'] = df_2324['Sub ICB Loc ONS code'].astype(str).str.strip().str.upper()
     df_2324['Sub ICB Loc name'] = df_2324['Sub ICB Loc name'].astype(str).str.strip()
-    # Ensure Prevalence (%) is numeric
+# Ensure Prevalence (%) is numeric
     df_2324['Prevalence (%)'] = pd.to_numeric(df_2324['Prevalence (%)'], errors='coerce')
-    # Filter out rows with null Prevalence
+# Filter out rows with null Prevalence
     df_2324 = df_2324.dropna(subset=['Prevalence (%)'])
     df_grouped = (
         df_2324.groupby(['Sub ICB Loc ONS code', 'Sub ICB Loc name'])['Prevalence (%)']
@@ -58,6 +62,8 @@ for feature in geojson['features']:
 # Enforce formatting on df_grouped codes (again, just to be safe)
 df_grouped['Sub ICB Loc ONS code'] = df_grouped['Sub ICB Loc ONS code'].str.strip().str.upper()
 df_grouped['Sub ICB Loc name'] = df_grouped['Sub ICB Loc name'].str.replace(r' ICB.*', '', regex=True)
+
+# Plot
 
 fig = px.choropleth_mapbox(
     df_grouped,
